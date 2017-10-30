@@ -1,0 +1,19 @@
+<div *ngIf="items?.length > 0; else noItems">
+  <ul 
+    class="collection"
+    *ngFor="let item of items"
+  >
+    <li       
+      class="collection-item"
+      (dblclick)="deleteItem(item)"
+    >
+      <strong>{{item.title}}:</strong> 
+      {{item.description}}
+    </li>
+  </ul>
+</div>
+
+<ng-template #noItems>
+  <hr>
+  <h5>There are no items to show.</h5>
+</ng-template>
